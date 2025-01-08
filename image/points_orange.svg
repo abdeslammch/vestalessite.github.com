@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 437 461">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#Nouveau_motif);
+      }
+
+      .cls-3 {
+        fill: #ff931e;
+      }
+    </style>
+    <pattern id="Nouveau_motif" data-name="Nouveau motif" x="0" y="0" width="45" height="45" patternTransform="translate(-7209 -1396)" patternUnits="userSpaceOnUse" viewBox="0 0 45 45">
+      <g>
+        <rect class="cls-1" width="45" height="45"/>
+        <circle class="cls-3" cx="22.5" cy="22.5" r="9.5"/>
+      </g>
+    </pattern>
+  </defs>
+  <rect class="cls-2" width="437" height="461"/>
+</svg>

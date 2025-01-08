@@ -1,0 +1,994 @@
+/* styles.css */
+
+body {
+    font-family: 'Yeseva One', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ecdcdc;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+}
+
+.logo img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navbar li {
+    padding: 10px 20px;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar li a:hover {
+    background-color: #f0f0f0;
+}
+
+.navbar li a.marie {
+    background-color: #FF931E;
+    color: white;
+    border-radius: 5px;
+}
+
+.navbar li a.marie:hover {
+    background-color: #FF931E;
+}
+
+.navbar li a[href="#about"]:hover {
+    background-color: green;
+}
+
+.navbar li a[href="#florence"]:hover {
+    background-color: yellow;
+}
+
+.navbar li a[href="#mata"]:hover {
+    background-color: purple;
+}
+
+.navbar li a[href="#milunka"]:hover {
+    background-color: red;
+}
+
+.navbar li a[href="#prenom_nom"]:hover {
+    background-color: pink;
+}
+
+.navbar li a[href="#infos"]:hover {
+    background-color: blue;
+}
+
+/* Styles pour l'image du header */
+.header-image, .header-image img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* Section Marie Curie */
+.marie-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f0f0f0;
+    position: relative;
+}
+
+.header-title {
+    background-color: orange;
+    color: white;
+    font-size: 86px;
+    font-family: 'Yeseva One', sans-serif;
+    padding: 0;
+    border-radius: 0;
+    position: relative;
+    left: 146px;
+    top: -379px;
+}
+
+.header-photo {
+    width: 584px;
+    height: auto;
+    object-fit: cover;
+    margin-left: -30px;
+    position: relative;
+    top: -446px;
+}
+
+/* Media Query pour petits écrans */
+@media screen and (max-width: 768px) {
+    /* Section Marie Curie */
+    .marie-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .header-title {
+        font-size: 40px;
+        left: 0;
+        top: 0;
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .header-photo {
+        width: 70%;
+        margin-left: 0;
+        top: 0;
+        position: relative;
+    }
+
+    /* Logo dans la barre de navigation */
+    .logo img {
+        width: 40px;
+    }
+
+    /* Menu responsive */
+    nav {
+        flex-direction: column;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+        font-size: 30px;
+        cursor: pointer;
+    }
+
+    .navbar li {
+        padding: 10px;
+        width: 100%;
+    }
+
+    .navbar li a {
+        padding: 10px;
+    }
+
+    /* Petite image sur petits écrans */
+    .header-photo {
+        width: 120px;
+    }
+}
+
+/* Styles supplémentaires pour petits écrans */
+@media screen and (max-width: 768px) {
+    .header-title {
+        width: 80%;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    .header-photo {
+        width: 120px;
+    }
+
+    nav {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navbar {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .navbar li {
+        padding: 0;
+        text-align: center;
+    }
+
+    .navbar li a {
+        padding: 10px;
+        display: block;
+        width: 100%;
+    }
+
+    .navbar li a.marie {
+        padding: 10px;
+    }
+}
+/* Container pour la section à gauche */
+.container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Ligne orange */
+.line {
+    width: 171px;
+    height: 3px;
+    background-color: orange;
+    margin-right: 10px;
+    position: relative;
+    top: -629px;
+    left: -7px;
+}
+
+/* Texte de la question */
+.question {
+    font-size: 40px;
+    font-weight: bold;
+    color: darkorange;
+    position: relative;
+    top: -633px;
+    left: -10px;
+}
+
+/* Media Query pour les petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .line {
+        width: 30px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .question {
+        font-size: 18px;
+    }
+}
+
+/* Media Query pour les très petits écrans (téléphones mobiles) */
+@media (max-width: 480px) {
+    .question {
+        font-size: 16px;
+    }
+}
+
+.bottom-text {
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.6;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.bottom-text p {
+    font-size: 21px;
+    margin-bottom: 15px;
+    position: relative;
+    top: -714px;
+    left: 151px;
+}
+
+/* Media Query pour ajuster la taille du texte en bas sur petits écrans */
+@media (max-width: 768px) {
+    .bottom-text p {
+        font-size: 14px;
+    }
+}
+
+/* Réinitialisation basique */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styles généraux pour le conteneur */
+.container-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    text-align: right;
+    position: relative;
+    top: -625px;
+}
+
+/* Ligne orange pour la section de droite */
+.right-line {
+    width: 57%;
+    height: 3px;
+    background-color: orange;
+    margin-left: 10px;
+    position: relative;
+    left: 302px;
+    top: 5px;
+}
+
+/* Texte de la question */
+.right-question {
+    font-size: 40px;
+    font-weight: bold;
+    color: darkorange;
+    position: relative;
+    left: -809px;
+}
+
+/* Media Query pour les petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .container-right {
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .right-line {
+        width: 30px;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .right-question {
+        font-size: 18px;
+    }
+}
+
+/* Media Query pour les très petits écrans (téléphones mobiles) */
+@media (max-width: 480px) {
+    .right-question {
+        font-size: 16px;
+    }
+}
+
+.bottom-text2 {
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.6;
+    margin-top: 40px;
+    padding: 20px;
+}
+
+.bottom-text2 p {
+    font-size: 24px;
+    margin-bottom: 15px;
+    position: relative;
+    top: -680px;
+    left: 380px;
+    color: darkslateblue;
+}
+
+/* Media Query pour ajuster la taille du texte en bas sur petits écrans */
+@media (max-width: 768px) {
+    .bottom-text2 p {
+        font-size: 14px;
+    }
+}
+
+/* Image responsive */
+#image2 {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+    flex-shrink: 0;
+    width: 100%;
+}
+
+/* Texte */
+p {
+    flex: 1;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Responsive pour les écrans très petits (mobile portrait) */
+@media (min-width: 1024px) {
+    #image2 {
+        width: 34%;
+        position: relative;
+        top: -1201px;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Responsive pour les écrans de taille moyenne (tablette) */
+@media (max-width: 768px) {
+    #image2 {
+        width: 34%;
+    }
+
+    p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Responsive pour les grands écrans (bureau) */
+@media (min-width: 1024px) {
+    #image2 {
+        width: 34%;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Texte dans .text */
+.text p {
+    font-size: 1.2em;
+}
+
+/* Section de l'image */
+.image {
+    flex: 1;
+    text-align: right;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Style pour les petits écrans */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .text {
+        text-align: center;
+        padding-right: 0;
+    }
+
+    .image {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+/* Section texte 3 */
+.text3 p {
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.6;
+    margin-top: 40px;
+    padding: 20px;
+    text-align: justify;
+    position: relative;
+    top: -1175px;
+    left: 81px;
+}
+
+/* Section de l'image 3 */
+.image3 {
+    flex: 1;
+    text-align: right;
+}
+
+.image3 img {
+    max-width: 46%;
+    height: auto;
+    border-radius: 8px;
+    position: relative;
+    left: 1px;
+    top: -1644px;
+}
+
+/* Media Query pour les petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .container3 {
+        flex-direction: column-reverse; /* L'image passe en bas sur petits écrans */
+    }
+
+    .text3 {
+        text-align: center; /* Centrer le texte sur petits écrans */
+        padding-right: 0;
+    }
+
+    .image3 {
+        text-align: center; /* Centrer l'image sur petits écrans */
+        margin-top: 20px;
+    }
+}
+
+/* Section texte 4 */
+.text4 p {
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.6;
+    margin-top: 40px;
+    padding: 20px;
+    text-align: justify;
+    position: relative;
+    top: -1649px;
+    left: 617px;
+}
+
+/* Section de l'image 4 */
+.image4 {
+    flex: 1;
+    text-align: right;
+}
+
+.image4 img {
+    max-width: 49%;
+    height: auto;
+    border-radius: 8px;
+    position: relative;
+    left: -943px;
+    top: -2171px;
+}
+
+/* Titre avec fond orange transparent */
+.text4 h1 {
+    display: inline-block;
+    margin: 0;
+    font-size: 6em;
+    color: rgb(255, 149, 0);
+    background-color: rgba(255, 165, 0, 0.25);
+    padding: 10px 20px;
+    border-radius: 0;
+    position: relative;
+    top: -1595px;
+    left: 446px;
+}
+
+/* Media Query pour les petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .container4 {
+        flex-direction: column-reverse; /* L'image passe en bas sur petits écrans */
+    }
+
+    .text4 {
+        text-align: center; /* Centrer le texte sur petits écrans */
+        padding-right: 0;
+    }
+
+    .image4 {
+        text-align: center; /* Centrer l'image sur petits écrans */
+        margin-top: 20px;
+    }
+}
+
+/* Image 5 incliné */
+.image-container {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+#image5 {
+    width: 30%;
+    height: auto;
+    transform: rotate(-43deg);
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 2949px;
+    left: 977px;
+}
+
+/* Effet de rotation au survol */
+#image5:hover {
+    transform: rotate(43deg) scale(1.05);
+}
+
+/* Section 6 */
+.container6 {
+    display: flex;
+    font-family: 'Josefin Sans', sans-serif;
+    align-items: center;
+    max-width: 1602px;
+    margin: 0;
+    border-radius: 0;
+    position: relative;
+    top: -1932px;
+}
+
+/* Section texte 6 */
+.text-section6 {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: -269px;
+    flex: -23;
+    left: 322px;
+    position: relative;
+}
+
+.text-section6 h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.text-section6 p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Section image 6 */
+.image-section6 {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.image-section6 img {
+    max-width: 40%;
+    height: auto;
+    transform: rotate(10deg);
+    transition: transform 0.3s ease;
+    position: relative;
+    left: 217px;
+}
+
+.image-section6 img:hover {
+    transform: rotate(0deg);
+}
+
+/* Media Query pour les petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .container6 {
+        flex-direction: column;
+    }
+
+    .text-section6, .image-section6 {
+        flex: none;
+        width: 100%;
+    }
+
+    .image-section6 img {
+        transform: none;
+    }
+}
+
+/* Section 7 */
+.container7 {
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 1457px;
+    border-radius: 8px;
+    margin: -13px;
+    position: relative;
+    top: -1769px;
+}
+
+.image-large {
+    flex: 1;
+}
+
+.image-large img {
+    max-width: 135%;
+    height: auto;
+    display: block;
+}
+
+/* Section texte 7 */
+.text-section7 {
+    font-family: 'Josefin Sans', sans-serif;
+    flex: 1;
+    padding: 17px;
+    position: relative;
+    left: 283px;
+    top: -19px;
+}
+
+.text-section7 h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.text-section7 p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Image small */
+.image-small {
+    position: absolute;
+    bottom: 20px;
+    right: 302px;
+}
+
+.image-small img {
+    max-width: 325px;
+    height: auto;
+    border-radius: 181px;
+    top: 69px;
+    position: relative;
+    left: 164px;
+    z-index: 11;
+}
+
+/* Media Query pour les petits écrans (tablettes et mobiles) */
+@media (max-width: 768px) {
+    .container7 {
+        flex-direction: column;
+    }
+
+    .image-small {
+        position: static;
+        margin-top: 20px;
+        align-self: center;
+    }
+}
+/* Réinitialisation basique pour éviter les marges et padding par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Conteneur principal */
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; /* Empêche le défilement horizontal */
+}
+
+/* Container pour la section à gauche */
+.container, .container-right, .container3, .container4, .container6, .container7 {
+    display: flex;
+    flex-wrap: wrap; /* Pour permettre à l'image et au texte de se réorganiser */
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* Ligne orange */
+.line, .right-line {
+    height: 3px;
+    background-color: orange;
+}
+
+/* Texte de la question */
+.question, .right-question, .text3 p, .text4 p, .text-section6 h1, .text-section7 h1 {
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: darkorange;
+    line-height: 1.6;
+}
+
+/* Responsivité générale */
+@media (max-width: 1024px) {
+    .container, .container-right, .container3, .container4, .container6, .container7 {
+        padding: 15px; /* Réduire le padding sur des écrans plus petits */
+    }
+}
+
+/* Adaptation de la section gauche */
+.container .line, .right-line {
+    width: 171px;
+    margin-right: 10px;
+}
+
+.container .question, .container-right .right-question {
+    font-size: 40px;
+    position: relative;
+}
+
+/* Réduction pour petits écrans */
+@media (max-width: 768px) {
+    .container, .container-right {
+        flex-direction: column; /* Empiler les éléments verticalement */
+        text-align: center;
+    }
+
+    .line, .right-line {
+        width: 30%; /* Réduire la taille de la ligne */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .question, .right-question {
+        font-size: 18px; /* Réduire la taille du texte */
+    }
+}
+
+/* Section texte et image */
+.text3 p, .text4 p, .text-section6 p, .text-section7 p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-top: 40px;
+    padding: 20px;
+    text-align: justify;
+    position: relative;
+}
+
+.image3 img, .image4 img, .image-section6 img, .image-small img, .image-large img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.image-container, .image-section6, .image-large, .image-small {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Media Query pour tablettes et mobiles */
+@media (max-width: 768px) {
+    .container, .container-right, .container3, .container4 {
+        flex-direction: column; /* Empilement sur les petits écrans */
+        align-items: center; /* Centrer les éléments */
+    }
+
+    .line, .right-line {
+        width: 50%; /* Ajuster la taille de la ligne */
+        margin: 10px 0;
+    }
+
+    .image3, .image4, .image-section6, .image-large {
+        max-width: 90%; /* Ajuster la taille des images */
+    }
+
+    .image-section6 img:hover, .image-small img:hover {
+        transform: none; /* Supprimer l'effet de rotation sur petits écrans */
+    }
+}
+
+/* Media Query pour les très petits écrans (mobiles) */
+@media (max-width: 480px) {
+    .question, .right-question, .text3 p, .text4 p, .text-section6 p, .text-section7 p {
+        font-size: 14px; /* Réduire la taille du texte pour les très petits écrans */
+    }
+
+    .image3, .image4, .image-section6, .image-large {
+        max-width: 100%; /* L'image occupe toute la largeur */
+    }
+
+    .container, .container-right, .container3, .container4, .container6, .container7 {
+        padding: 10px; /* Réduire le padding */
+    }
+
+    .image-small img {
+        max-width: 80%; /* Ajuster la taille des petites images */
+        margin-top: 20px;
+    }
+}
+
+/* Section avec image incliné */
+#image5 {
+    width: 30%;
+    height: auto;
+    transform: rotate(-43deg);
+    transition: transform 0.3s ease;
+    position: absolute;
+    top: 2949px;
+    left: 977px;
+}
+
+#image5:hover {
+    transform: rotate(43deg) scale(1.05);
+}
+
+/* Style pour les grands écrans */
+@media (min-width: 1024px) {
+    .image3 img, .image4 img {
+        max-width: 45%;
+    }
+
+    .text3 p, .text4 p {
+        font-size: 1.2rem;
+    }
+}
+
+/* Titre spécifique avec fond orange */
+.text4 h1 {
+    font-size: 6em;
+    color: rgb(255, 149, 0);
+    background-color: rgba(255, 165, 0, 0.25);
+    padding: 10px 20px;
+    border-radius: 0;
+    position: relative;
+}
+
+/* Image section 6 */
+.image-section6 img {
+    transform: rotate(10deg);
+}
+
+.image-section6 img:hover {
+    transform: rotate(0deg);
+}
+
+@media (max-width: 768px) {
+    .container6 {
+        flex-direction: column; /* Empiler les éléments */
+    }
+
+    .image-section6 img {
+        transform: none; /* Désactiver la rotation sur petits écrans */
+    }
+
+    .image-section6, .text-section6 {
+        text-align: center;
+    }
+
+    .image-section6 img {
+        max-width: 80%;
+    }
+}
+
+/* Section 7 */
+.image-large img {
+    max-width: 135%;
+    display: block;
+}
+
+.image-small img {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    max-width: 325px;
+    border-radius: 181px;
+    top: 69px;
+}
+
+@media (max-width: 768px) {
+    .container7 {
+        flex-direction: column;
+    }
+
+    .image-large img {
+        max-width: 90%; /* Ajuster l'image sur petit écran */
+    }
+
+    .image-small {
+        position: static;
+        margin-top: 20px;
+        align-self: center;
+    }
+}

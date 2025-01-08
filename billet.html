@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Billetterie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+
+    <!-- Liens vers le CDN Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Bibliothèque pour générer le QR code -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.4.4/build/qrcode.min.js"></script>
+    <!-- Bibliothèque jsPDF pour générer le PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <style>
+        body {
+            background-color: #f4f1eb;
+            color: #5c4033;
+            font-family: 'Yeseva One', sans-serif;
+        }
+        .bg-billet {
+            background-color: #6f4f29;
+        }
+        .btn-billet {
+            background-color: #6f4f29;
+            color: white;
+            border: none;
+        }
+        .btn-billet:hover {
+            background-color: #8b5d3e;
+        }
+        .btn-retour {
+            background-color: #8b5d3e;
+            color: white;
+            border: none;
+        }
+        .btn-retour:hover {
+            background-color: #6f4f29;
+        }
+        /* Fond marron transparent pour la colonne de droite */
+        .col-md-6.right-column {
+            background-color: rgba(111, 79, 41, 0.7); /* Marron avec transparence */
+            padding: 20px;
+            border-radius: 10px;
+            color: #f4f1eb; /* Texte en blanc pour contraster avec le fond marron */
+            height: max-content; /* La hauteur s'ajuste en fonction du contenu */
+        }
+        .footer-logo {
+            width: 210px; /* Ajustez la taille selon vos besoins */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header class="bg-billet text-white text-center py-5">
+        <h1>Billetterie en ligne</h1>
+        <p>Réservez vos billets pour l'événement à venir.</p>
+    </header>
+
+    <!-- Section Billetterie -->
+    <section class="container py-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Réservez vos billets</h2>
+                <form id="formBillets">
+                    <div class="mb-3">
+                        <label for="evenement" class="form-label">Événement</label>
+                        <input type="text" class="form-control" id="evenement" value="Immersif" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="lieu" class="form-label">Choisissez un lieu</label>
+                        <select class="form-select" id="lieu" required>
+                            <option value="" disabled selected>-- Sélectionnez un lieu --</option>
+                            <option value="paris">Paris</option>
+                            <option value="lyon">Lyon</option>
+                            <option value="marseille">Marseille</option>
+                            <option value="bordeaux">Bordeaux</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="age" class="form-label">Âge</label>
+                        <input type="number" class="form-control" id="age" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="nbBillets" class="form-label">Nombre de billets</label>
+                        <input type="number" class="form-control" id="nbBillets" min="1" max="10" value="1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="date" class="form-label">Date de l'événement</label>
+                        <input type="date" class="form-control" id="date" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="total" class="form-label">Total à payer (€)</label>
+                        <input type="text" class="form-control" id="total" value="15" disabled>
+                    </div>
+
+                    <h3>Informations de paiement</h3>
+                    <div class="mb-3">
+                        <label for="nom" class="form-label">Nom sur la carte</label>
+                        <input type="text" class="form-control" id="nom" placeholder="Nom du titulaire" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="carte" class="form-label">Numéro de la carte</label>
+                        <input type="text" class="form-control" id="carte" placeholder="XXXX XXXX XXXX XXXX" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="expiration" class="form-label">Date d'expiration</label>
+                        <input type="month" class="form-control" id="expiration" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input type="text" class="form-control" id="cvv" placeholder="XXX" required>
+                    </div>
+
+                    <button type="button" class="btn btn-billet" id="btnAcheter" onclick="genererBillet()" disabled>Acheter et Télécharger</button>
+                </form>
+            </div>
+            <div class="col-md-6 right-column">
+                <h2>Événement Immersif</h2>
+                <p>Venez vivre une expérience immersive unique dans l'un des quatre lieux proposés. Une aventure sensorielle que vous ne pouvez pas manquer !</p>
+                <h3>Nos Lieux</h3>
+                <ul class="list-unstyled">
+                    <li>
+                        <h5>Paris</h5>
+                        <p>Découvrez l'expérience immersive à Paris. Plongez dans un monde captivant au cœur de la capitale.</p>
+                    </li>
+                    <li>
+                        <h5>Lyon</h5>
+                        <p>Vivez une aventure immersive à Lyon. Ne manquez pas cette opportunité unique.</p>
+                    </li>
+                    <li>
+                        <h5>Marseille</h5>
+                        <p>Profitez de l'expérience immersive à Marseille. Une aventure inoubliable vous attend.</p>
+                    </li>
+                    <li>
+                        <h5>Bordeaux</h5>
+                        <p>Plongez dans une expérience immersive à Bordeaux. Une découverte fascinante à ne pas manquer.</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bouton de retour -->
+    <div class="text-center my-4">
+        <button class="btn btn-retour" onclick="window.location.href='index.html'">Retour</button>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-billet text-white text-center py-3">
+        <img src="imageacc/Logo_Vestales.png" alt="Logo" class="footer-logo">
+
+        <p>&copy; Tous droits réservés</p>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        // Fonction pour calculer le total en fonction de l'âge et du nombre de billets
+        function calculerPrix() {
+            const age = parseInt(document.getElementById("age").value);
+            const nbBillets = parseInt(document.getElementById("nbBillets").value);
+            let prixUnitaire = 15; // Prix par défaut pour les moins de 25 ans
+
+            // Si l'âge est 25 ou plus, le prix augmente
+            if (age >= 25) {
+                prixUnitaire = 22;
+            }
+
+            // Calcul du total
+            const total = prixUnitaire * nbBillets;
+            document.getElementById("total").value = total;
+        }
+
+        // Ajout d'événements pour recalculer le prix lors de l'entrée des données
+        document.getElementById("age").addEventListener("input", calculerPrix);
+        document.getElementById("nbBillets").addEventListener("input", calculerPrix);
+
+        // Fonction pour valider le formulaire et activer le bouton
+        function validerFormulaire() {
+            const btnAcheter = document.getElementById("btnAcheter");
+            const formFields = document.querySelectorAll("#formBillets input, #formBillets select");
+            let isValid = true;
+
+            formFields.forEach(function(field) {
+                if (!field.value) {
+                    isValid = false;
+                }
+            });
+
+            // Activer ou désactiver le bouton en fonction de la validité
+            btnAcheter.disabled = !isValid;
+        }
+
+        // Appeler la validation du formulaire à chaque modification
+        document.getElementById("formBillets").addEventListener("input", validerFormulaire);
+        document.getElementById("formBillets").addEventListener("change", validerFormulaire);
+
+        // Fonction pour générer et télécharger le PDF
+        function genererBillet() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const evenement = "Événement Immersif";
+            const lieu = document.getElementById("lieu").value;
+            const age = document.getElementById("age").value;
+            const nbBillets = document.getElementById("nbBillets").value;
+            const total = document.getElementById("total").value;
+
+            // Fond marron
+            doc.setFillColor(111, 79, 41);
+            doc.rect(0, 0, 210, 297, 'F'); // Remplir la page avec du marron
+
+            // Texte en blanc et marron
+            doc.setTextColor(255, 255, 255); // Texte en blanc
+            doc.setFontSize(22);
+            doc.text(`Billet pour l'événement: ${evenement}`, 20, 30);
+
+            // Détails du billet
+            doc.setFontSize(16);
+            doc.text(`Lieu: ${lieu}`, 20, 50);
+            doc.text(`Âge: ${age} ans`, 20, 70);
+            doc.text(`Nombre de billets: ${nbBillets}`, 20, 90);
+            doc.text(`Total à payer: €${total}`, 20, 110);
+
+            // Générer un QR code avec le lien pour l'événement
+            const qrCodeData = `Événement: ${evenement}, Lieu: ${lieu}`;
+            const qrCode = QRCode.toDataURL(qrCodeData);
+            qrCode.then(function(url) {
+                doc.addImage(url, 'PNG', 150, 30, 40, 40);
+                doc.save(`billet_${evenement}_${lieu}.pdf`);
+            });
+        }
+    </script>
+</body>
+</html>

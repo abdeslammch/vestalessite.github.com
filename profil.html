@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Se connecter ou s'inscrire</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="js/script_user.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f7fc;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            font-family: 'Yeseva One', sans-serif;
+        }
+        .container {
+            max-width: 500px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        .form-switch a {
+            color: #4CAF50;
+        }
+        .form-switch a:hover {
+            text-decoration: underline;
+        }
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #6C554770, #86693287, #D5A7A7, #684D56B2);
+            background-size: 400% 400%;
+            z-index: 0;
+            animation: gradientAnimation 15s ease infinite;
+        }
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+        }
+        .back-button a {
+            text-decoration: none;
+        }
+        footer {
+            background-color: #6f4f29;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            border-top: 1px solid #e7e7e7;
+        }
+        footer p {
+            margin: 0;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="back-button">
+        <a href="index.html" class="btn btn-outline-secondary">
+            &larr; Retour à l'accueil
+        </a>
+    </div>
+
+    <div class="container">
+        <h2 class="text-center mb-4"> Bienvenue au Vestales </h2>
+        
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <a class="nav-link active" id="loginTab" data-bs-toggle="pill" href="#login" role="tab" aria-controls="login" aria-selected="true">Se connecter</a>
+            </li>
+            <li class="nav-item" role="presentation">
+                <a class="nav-link" id="signupTab" data-bs-toggle="pill" href="#signup" role="tab" aria-controls="signup" aria-selected="false">S'inscrire</a>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="pills-tabContent">
+            <!-- Formulaire de Connexion -->
+            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="loginTab">
+                <form action="/connexion" method="POST">
+                    <div class="mb-3">
+                        <label for="loginEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="loginEmail" name="email" placeholder="Entrez votre email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="loginPassword" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Entrez votre mot de passe" required>
+                    </div>
+                    <button id="loginSubmit" type="submit" class="btn btn-primary w-100">Se connecter</button>
+                    <div class="form-switch mt-3">
+                        <a href="#">Mot de passe oublié ?</a>
+                    </div>
+                </form>
+            </div>
+            
+            <!-- Formulaire d'Inscription -->
+            <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signupTab">
+                <form action="/inscription" method="POST">
+                    <div class="mb-3">
+                        <label for="signupName" class="form-label">Nom complet</label>
+                        <input type="text" class="form-control" id="signupName" name="name" placeholder="Entrez votre nom complet" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupEmail" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="signupEmail" name="email" placeholder="Entrez votre email" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupPassword" class="form-label">Mot de passe</label>
+                        <input type="password" class="form-control" id="signupPassword" name="password" placeholder="Créez un mot de passe" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="signupConfirmPassword" class="form-label">Confirmer le mot de passe</label>
+                        <input type="password" class="form-control" id="signupConfirmPassword" name="confirmPassword" placeholder="Confirmez votre mot de passe" required>
+                    </div>
+                    <button type="submit" class="btn btn-success w-100">S'inscrire</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; Vestales. Tous droits réservés.</p>
+    </footer>
+
+    <!-- Bootstrap JS et dépendances -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

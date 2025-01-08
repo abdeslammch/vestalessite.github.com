@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Responsive avec Barre de Navigation</title>
+    <link rel="stylesheet" href="css/css1.css">
+    <!-- Lien vers la police Yeseva One depuis Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Unbounded:wght@200..900&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <header>
+        <nav>
+            <!-- Logo cliquable ajouté ici -->
+            <a href="#" class="logo">
+                <img src="imageacc/Logo_Vestales.png" alt="Logo" width="50" height="50">
+            </a>
+            <div class="menu-icon" onclick="toggleMenu()">
+                &#9776; <!-- Icône du menu hamburger -->
+            </div>
+            <ul class="navbar">
+                <!-- Liens de la navigation ici -->
+            </ul>
+        </nav>
+            
+            <ul class="navbar">
+                <li class="divider"></li>
+                <li><a href="#about">À propos</a></li>
+                <li class="divider"></li>
+                <li><a href="Marie.html">Marie Curie</a></li>
+                <li class="divider"></li>
+                <li><a href="#emilienne">Émilienne Moreau-Evrard</a></li>
+                <li class="divider"></li>
+                <li><a href="#hortense">Hortense-Juliette Breyer</a></li>
+                <li class="divider"></li>
+                <li><a href="#nicole">Nicole Girard-Mangin</a></li>
+                <li class="divider"></li>
+                <li><a href="#mata">Mata Hari</a></li>
+                <li class="divider"></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="divider"></li>
+                <li><a href="billet.html"> <img src="imageacc/Billets.svg" width="30px" height="20px" ></a></li>
+                <li class="divider"></li>
+                <li><a href="profil.html"><img src="imageacc/Profil.svg" width="30px" height="20px" ></a></li>
+                <li class="divider"></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="header-image">
+        <img src="imageacc/head.jpg" alt="Header Image">
+        <!-- Texte ajouté en bas à droite de l'image -->
+        <div class="header-text">VIVEZ UNE EXPÉRIENCE <br>
+            &nbsp;&nbsp;IMMERSIVE INOUBLIABLE</div>
+            <!-- Bouton pour réserver les billets -->
+            <div>
+                <a href="billet.html" class="reserve-button">
+                    RÉSERVEZ VOS BILLETS &nbsp;
+                    <img src="imageacc/Billets.svg" width="5px" height="5px">
+                </a>
+            </div>
+    </div>
+    <main>
+        <div class="content-wrapper">
+            <div class="text-section">
+                <p>Bienvenue à l'exposition immersive "Vestales", un lieu où passé et présent se rencontrent dans une expérience inédite, entre Guerre, Souvenir et Transmission.
+                    Nous vous invitons à plonger dans l’histoire de femmes exceptionnelles qui ont marqué leur époque. À travers des espaces immersifs, vous découvrirez des objets et souvenirs personnels qui retracent leur influence pendant la Première Guerre mondiale. Explorez leurs bureaux, examinez les objets qui ont façonné l'histoire, et laissez-vous emporter par les témoignages et les mémoires de ces femmes remarquables.
+                    Au fil de cette expérience, vous serez transporté dans le métavers, là où la frontière entre le passé et le présent s’estompe. Vous aurez l’opportunité de mener une enquête temporelle, de percer les mystères cachés dans chaque pièce et de relever les défis nécessaires pour sortir de cette boucle temporelle et revenir dans le monde d’aujourd'hui.
+                    Nous vous souhaitons une exploration captivante et riche en découvertes. Bonne immersion !</p>
+            </div>
+            <div class="image-section">
+                <img src="imageacc/Photo_plan.jpg" alt="Plan Image">
+            </div>
+        </div>
+        </main>
+        <hr class="separator">
+
+        <h2 class="section-title">LES 5 FEMMES</h2>
+        <p class="section-description">Découvrez les profils de 5 femmes ayant vécu <br>
+            la Première Guerre Mondiale de différentes manières.</p>
+
+            <div class="container">
+                <!-- Bande 1 - Marie Curie -->
+                <!-- Bande 1 - Marie Curie -->
+<div class="band" id="band1">
+    <span class="band-title">Marie Curie</span>
+    <span class="band-icon">&#10003;</span> <!-- Crochet -->
+</div>
+<div class="band-content" id="content1" style="max-height: 344px; opacity: 1;">
+    <div class="band-inner">
+        <div class="band-photo">
+            <img src="imageacc/MarieCurie.png" alt="Photo Marie Curie">
+        </div>
+        <div class="band-text">
+            <p>Marie Curie est née en 1867 à Varsovie, annexée par la Russie à l’époque. L’accès à l’université est malheureusement difficile d’accès pour les polonais et interdit pour les femmes, ce qui oblige Marie Curie à partir vivre à Paris afin de faire des études de physique et de mathématiques. C’est après son mariage avec le scientifique Pierre Curie qu’elle obtient sa nationalité française. Elle obtient un prix Nobel de physique en 1903 grâce à son travail sur la radioactivité.</p>
+        </div>
+    </div>
+    <!-- Bouton "En savoir plus" ajouté ici -->
+    <a href="Marie.html" class="more-button">En savoir plus</a>
+</div>
+
+<!-- Bande 2 - Exemple 2 -->
+<div class="band" id="band2">
+    <span class="band-title2">Émilienne Moreau-Evrard
+    </span>
+    <span class="band-icon">&#10003;</span> <!-- Crochet -->
+</div>
+<div class="band-content" id="content2">
+    <div class="band-inner">
+        <div class="band-photo">
+            <img src="photo2.jpg" alt="Exemple Photo 2">
+        </div>
+        <div class="band-text">
+            <p>Exemple de texte pour la deuxième bande...</p>
+        </div>
+    </div>
+    <a href="#band2-more" class="more-button">En savoir plus</a>
+</div>
+        
+                <!-- Bande 3 -->
+                <div class="band" id="band3">
+                    <span class="band-title3">Hortense-Juliette Breyer</span>
+                    <span class="band-icon">&#10003;</span> <!-- Crochet -->
+                </div>
+                <div class="band-content" id="content3">
+                    <div class="band-inner">
+                        <div class="band-photo">
+                            <img src="photo3.jpg" alt="Exemple Photo 3">
+                        </div>
+                        <div class="band-text">
+                            <p>Texte explicatif pour la troisième bande.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Autres bandes... -->
+                 <!-- Bande 2 - Exemple 2 -->
+                <div class="band" id="band4">
+                    <span class="band-title4">Nicole Girard-Mangin</span>
+                    <span class="band-icon">&#10003;</span> <!-- Crochet -->
+                </div>
+                <div class="band-content" id="content4">
+                    <div class="band-inner">
+                        <div class="band-photo">
+                            <img src="photo2.jpg" alt="Exemple Photo 2">
+                        </div>
+                        <div class="band-text">
+                            <p>Exemple de texte pour la deuxième bande.</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Bande 3 -->
+                <div class="band" id="band5">
+                    <span class="band-title5">Mata Hari</span>
+                    <span class="band-icon">&#10003;</span> <!-- Crochet -->
+                </div>
+                <div class="band-content" id="content5">
+                    <div class="band-inner">
+                        <div class="band-photo">
+                            <img src="photo3.jpg" alt="Exemple Photo 3">
+                        </div>
+                        <div class="band-text">
+                            <p>Texte explicatif pour la troisième bande.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="contact-section">
+                <h3>Contactez-nous</h3>
+                <p>Email : contact@example.com</p>
+                <p>Téléphone : 01 23 45 67 89</p>
+            </div>
+            <img src="imageacc/Logo_Vestales.png" alt="Logo" class="footer-logo">
+
+            <div class="social-media">
+                <a href="https://www.facebook.com" target="_blank" class="social-icon"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="social-icon"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </footer>
+
+        
+
+    <script>
+        function toggleMenu() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+        // Fonction pour gérer le clic sur chaque bande
+        document.querySelectorAll('.band').forEach(function(band) {
+    band.addEventListener('click', function() {
+        const content = this.nextElementSibling;
+
+        if (this.classList.contains('open')) {
+            this.classList.remove('open');
+            content.style.maxHeight = '0px';
+            content.style.opacity = '0';
+        } else {
+            document.querySelectorAll('.band').forEach(function(b) {
+                b.classList.remove('open');
+                b.nextElementSibling.style.maxHeight = '0px';
+                b.nextElementSibling.style.opacity = '0';
+            });
+            this.classList.add('open');
+            content.style.maxHeight = content.scrollHeight + 'px';
+            content.style.opacity = '1';
+        }
+    });
+});
+// Attacher un gestionnaire d'événements au bouton
+document.getElementById('.reserve-button').addEventListener('click', function() {
+    // Rediriger vers une autre page après avoir cliqué sur le bouton
+    window.location.href = 'sons.html'; // Remplace par l'URL de destination
+});
+    </script>
+</body>
+</html>

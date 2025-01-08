@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compte Utilisateur - Musée Vestales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f4f1eb;
+            color: #5c4033;
+            font-family: 'Yeseva One', sans-serif;
+        }
+        .bg-header, .navbar {
+            background-color: #6f4f29;
+        }
+        .navbar-brand, .navbar-nav .nav-link {
+            color: white !important;
+        }
+        .navbar-nav .nav-link:hover, .dropdown-item:hover {
+            color: #f4f1eb !important;
+            background-color: #8b5d3e;
+        }
+        .card {
+            background-color: rgba(111, 79, 41, 0.7);
+            color: #f4f1eb;
+            border: none;
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: #6f4f29;
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+        }
+        .footer-logo {
+            width: 210px; /* Ajustez la taille selon vos besoins */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="imageacc/Logo_Vestales.png" alt="Logo" width="80px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">À propos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="billet.html">Billetterie</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Exposition
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="Marie.html">Marie Curie</a></li>
+                            <li><a class="dropdown-item" href="#emilienne-moreau">Émilienne Moreau-Evrard</a></li>
+                            <li><a class="dropdown-item" href="#hortense-juliette">Hortense-Juliette Breyer</a></li>
+                            <li><a class="dropdown-item" href="#nicole-girard">Nicole Girard-Mangin</a></li>
+                            <li><a class="dropdown-item" href="#mata-hari">Mata Hari</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profil Utilisateur -->
+    <div class="container my-5">
+        <div class="text-center mb-5">
+            <h2>Bonjour, <span id="username">Jean Dupont</span>!</h2>
+            <p class="lead">Bienvenue sur votre espace personnel.</p>
+        </div>
+
+        <div class="row">
+            <!-- Section Informations Personnelles -->
+            <div class="col-lg-6">
+                <h3 class="section-title">Informations Personnelles</h3>
+                <div class="card p-3">
+                    <p><strong>Nom :</strong> Jean Dupont</p>
+                    <p><strong>Email :</strong> jean.dupont@example.com</p>
+                    <p><strong>Numéro de téléphone :</strong> +33 6 12 34 56 78</p>
+                    <p><strong>Adresse :</strong> 10, Rue des Artistes, 75001 Paris</p>
+                </div>
+            </div>
+
+            <!-- Section Billets -->
+            <div class="col-lg-6">
+                <h3 class="section-title">Billets et Réservations</h3>
+                <div class="card p-3">
+                    <h4>Billets Enregistrés</h4>
+                    <ul>
+                        <li>Billet pour l'exposition "Impressionnistes" - 15/01/2025</li>
+                        <li>Billet pour "Nocturne au Musée" - 20/01/2025</li>
+                    </ul>
+                    <h4>Réservations en Cours</h4>
+                    <ul>
+                        <li>Réservation pour "Art Contemporain" - 05/02/2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Section Expositions Préférées -->
+            <div class="col-lg-6">
+                <h3 class="section-title">Expositions Préférées</h3>
+                <div class="card p-3">
+                    <ul>
+                        <li>Exposition "Van Gogh et ses étoiles"</li>
+                        <li>Exposition "Art Nouveau - Une révolution esthétique"</li>
+                        <li>Exposition "Surréalisme : Rêve et Réalité"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Section Historique des Visites -->
+            <div class="col-lg-6">
+                <h3 class="section-title">Historique des Visites</h3>
+                <div class="card p-3">
+                    <ul>
+                        <li>Visite de l'exposition "Les Impressionnistes" - 10/12/2024</li>
+                        <li>Participation à l'atelier "Peinture en Plein Air" - 05/11/2024</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <button class="btn btn-primary-custom">Modifier mes informations</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-header text-white text-center py-3">
+        <img src="imageacc/Logo_Vestales.png" alt="Logo" class="footer-logo">
+
+        <p>&copy; Tous droits réservés.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
